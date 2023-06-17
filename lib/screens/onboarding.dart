@@ -1,4 +1,5 @@
 import 'package:easy_ride/models/onboarding_model.dart';
+import 'package:easy_ride/screens/authentication/welcomescreen.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatefulWidget {
@@ -10,12 +11,14 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   List<PageData> data = pageList;
+  PageController pages = PageController();
+  int currentIndex = 0;
 
   String iconbutton = 'Icon(Icons.navigate_next)';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 35, 35, 35),
+      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 15),
         child: Column(
@@ -36,13 +39,21 @@ class _OnboardingState extends State<Onboarding> {
             SizedBox(
               height: 400,
               child: PageView.builder(
+                  onPageChanged: (value) {
+                    setState(() {
+                      buttonText =
+                          value == pageList.length - 1 ? 'Get Started' : 'Next';
+                      currentIndex = value;
+                    });
+                  },
+                  controller: pages,
                   itemCount: pageList.length,
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
                         AspectRatio(
                             aspectRatio: 10 / 5,
-                            child: Image.asset(pageList[index].image)),
+                            child: Image.network(pageList[index].image)),
                         const SizedBox(
                           height: 15,
                         ),
@@ -69,15 +80,26 @@ class _OnboardingState extends State<Onboarding> {
                   }),
             ),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(60, 60),
-                    shape: const CircleBorder(),
-                    backgroundColor: const Color(0xffFEC400)),
-                onPressed: () {},
-                child: const Icon(Icons.navigate_next))
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(60, 60),
+                  shape: const CircleBorder(),
+                  backgroundColor: const Color(0xffFEC400)),
+              onPressed: () {
+                pages.animateToPage(currentIndex + 1,
+                    duration: const Duration(microseconds: 1),
+                    curve: Curves.easeIn);
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WelcomePage()));
+              },
+              child: Text(buttonText),
+            )
           ],
         ),
       ),
     );
   }
+
+  String buttonText = 'Next';
 }

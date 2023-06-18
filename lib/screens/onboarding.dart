@@ -14,7 +14,18 @@ class _OnboardingState extends State<Onboarding> {
   PageController pages = PageController();
   int currentIndex = 0;
 
-  String iconbutton = 'Icon(Icons.navigate_next)';
+  void goToNextPage() {
+    if (currentIndex < pageList.length - 1) {
+      pages.nextPage(duration: const Duration(seconds: 1), curve: Curves.ease);
+      setState(() {
+        currentIndex++;
+      });
+    } else {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const WelcomePage()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,13 +96,14 @@ class _OnboardingState extends State<Onboarding> {
                   shape: const CircleBorder(),
                   backgroundColor: const Color(0xffFEC400)),
               onPressed: () {
-                pages.animateToPage(currentIndex + 1,
-                    duration: const Duration(microseconds: 1),
-                    curve: Curves.easeIn);
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const WelcomePage()));
+                goToNextPage();
+                // pages.animateToPage(currentIndex + 1,
+                //     duration: const Duration(microseconds: 1),
+                //     curve: Curves.easeIn);
+                // Navigator.pushReplacement(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const WelcomePage()));
               },
               child: Text(buttonText),
             )
@@ -102,4 +114,6 @@ class _OnboardingState extends State<Onboarding> {
   }
 
   String buttonText = 'Next';
+
+  IconData customIcon = Icons.home;
 }

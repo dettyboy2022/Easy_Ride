@@ -1,5 +1,6 @@
 import 'package:easy_ride/screens/authentication/otp.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -14,13 +15,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text(
-          'Back',
-          style: TextStyle(color: AppColor.textColor1),
-        ),
-        backgroundColor: Colors.black,
-      ),
+      appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -67,6 +62,7 @@ class _SignUpState extends State<SignUp> {
                 height: 50,
                 width: double.infinity,
                 child: DropdownButton(
+                    padding: const EdgeInsets.only(left: 10),
                     dropdownColor: Colors.grey.shade900,
                     value: dropdownvalue,
                     items: items.map((String items) {
@@ -77,6 +73,7 @@ class _SignUpState extends State<SignUp> {
                             style: const TextStyle(color: AppColor.textColor1),
                           ));
                     }).toList(),
+                    underline: const SizedBox(),
                     onChanged: (String? newValue) {
                       setState(() {
                         dropdownvalue = newValue!;
@@ -127,9 +124,8 @@ class _SignUpState extends State<SignUp> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: Colors.white)),
-                              child: Icon(
-                                e['icon'],
-                                color: Colors.white,
+                              child: Image.network(
+                                e['image'],
                               ),
                             ))
                         .toList(),
@@ -137,10 +133,15 @@ class _SignUpState extends State<SignUp> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const Text(
-                    'Already have an account? Sign in',
-                    style: TextStyle(color: AppColor.textColor1, fontSize: 15),
-                  )
+                  RichText(
+                      text: const TextSpan(children: [
+                    TextSpan(
+                        text: 'Already have an account? ',
+                        style: TextStyle(color: AppColor.textColor1)),
+                    TextSpan(
+                        text: ' Sign in',
+                        style: TextStyle(color: AppColor.textColor2))
+                  ]))
                 ],
               )
             ],
@@ -156,8 +157,17 @@ class _SignUpState extends State<SignUp> {
   String groupValue = 'male';
 
   List socials = [
-    {'icon': Icons.mail},
-    {'icon': Icons.facebook},
-    {'icon': Icons.apple}
+    {
+      'image':
+          'https://res.cloudinary.com/dxje0rp9f/image/upload/v1687182263/easy_ride/Gmail_upijuz.png'
+    },
+    {
+      'image':
+          'https://res.cloudinary.com/dxje0rp9f/image/upload/v1687182263/easy_ride/Facebook_ez4gbg.png'
+    },
+    {
+      'image':
+          'https://res.cloudinary.com/dxje0rp9f/image/upload/v1687182264/easy_ride/Apple_d4yu1g.png'
+    }
   ];
 }

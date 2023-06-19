@@ -1,5 +1,6 @@
 import 'package:easy_ride/screens/authentication/signup.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -28,13 +29,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    'Welcome',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        color: AppColor.textColor1),
-                  ),
+                  const CustomText(text: 'Welcome'),
                   const SizedBox(
                     height: 10,
                   ),

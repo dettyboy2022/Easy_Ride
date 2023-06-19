@@ -1,6 +1,7 @@
 import 'package:easy_ride/models/onboarding_model.dart';
 import 'package:easy_ride/screens/authentication/welcomescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -10,13 +11,16 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
+
+
   List<PageData> data = pageList;
   PageController pages = PageController();
   int currentIndex = 0;
 
   void goToNextPage() {
     if (currentIndex < pageList.length - 1) {
-      pages.nextPage(duration: const Duration(seconds: 1), curve: Curves.ease);
+      pages.nextPage(
+          duration: const Duration(microseconds: 500), curve: Curves.easeIn);
       setState(() {
         currentIndex++;
       });
@@ -52,8 +56,9 @@ class _OnboardingState extends State<Onboarding> {
               child: PageView.builder(
                   onPageChanged: (value) {
                     setState(() {
-                      buttonText =
-                          value == pageList.length - 1 ? 'Get Started' : 'Next';
+                      customIcon = (value == pageList.length - 1
+                          ? Iconsax.home
+                          : customIcon);
                       currentIndex = value;
                     });
                   },
@@ -92,20 +97,13 @@ class _OnboardingState extends State<Onboarding> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(60, 60),
+                  fixedSize: const Size(70, 70),
                   shape: const CircleBorder(),
                   backgroundColor: const Color(0xffFEC400)),
               onPressed: () {
                 goToNextPage();
-                // pages.animateToPage(currentIndex + 1,
-                //     duration: const Duration(microseconds: 1),
-                //     curve: Curves.easeIn);
-                // Navigator.pushReplacement(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => const WelcomePage()));
               },
-              child: Text(buttonText),
+              child: Icon(customIcon),
             )
           ],
         ),
@@ -113,7 +111,5 @@ class _OnboardingState extends State<Onboarding> {
     );
   }
 
-  String buttonText = 'Next';
-
-  IconData customIcon = Icons.home;
+  IconData customIcon = Iconsax.next;
 }

@@ -1,3 +1,4 @@
+import 'package:easy_ride/screens/authentication/profile_reg.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
@@ -10,6 +11,7 @@ class PasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: const CustomAppBar(),
       body: Padding(
         padding:
@@ -22,7 +24,7 @@ class PasswordScreen extends StatelessWidget {
                 children: [
                   CustomText(text: 'Set Password'),
                   SizedBox(
-                    height: 15,
+                    height: 10,
                   ),
                   Text('Set your password'),
                   SizedBox(
@@ -33,6 +35,7 @@ class PasswordScreen extends StatelessWidget {
                     obscuringCharacter: '*',
                     decoration: InputDecoration(
                         hintText: 'Enter Your Password',
+                        hintStyle: TextStyle(color: AppColor.textColor1),
                         suffixIcon: Icon(Iconsax.eye),
                         border: OutlineInputBorder()),
                   ),
@@ -44,6 +47,7 @@ class PasswordScreen extends StatelessWidget {
                     obscuringCharacter: '*',
                     decoration: InputDecoration(
                         hintText: 'Confirm Password',
+                        hintStyle: TextStyle(color: AppColor.textColor1),
                         suffixIcon: Icon(Iconsax.eye),
                         border: OutlineInputBorder()),
                   )
@@ -55,7 +59,12 @@ class PasswordScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       minimumSize: const Size(double.infinity, 50),
                       backgroundColor: AppColor.backgroundColor),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CreateProfile()));
+                  },
                   child: const Text('Register'))
             ],
           ),

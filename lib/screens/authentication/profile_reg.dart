@@ -1,3 +1,4 @@
+import 'package:easy_ride/screens/authentication/signin.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,12 @@ class _CreateProfileState extends State<CreateProfile> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
                           backgroundColor: AppColor.backgroundColor),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignIn()));
+                      },
                       child: const Text('Save'))
                 ],
               )

@@ -11,8 +11,6 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
-
-
   List<PageData> data = pageList;
   PageController pages = PageController();
   int currentIndex = 0;
@@ -33,7 +31,6 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 15),
         child: Column(

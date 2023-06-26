@@ -1,5 +1,7 @@
-import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/screens/authentication/forgotpassword.dart';
+import 'package:easy_ride/screens/authentication/verification.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -18,7 +20,15 @@ class _SignInState extends State<SignIn> {
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
         child: Column(
           children: [
-            const Text('Sign in'),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Sign in',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
             const SizedBox(
               height: 15,
             ),
@@ -35,14 +45,34 @@ class _SignInState extends State<SignIn> {
                   hintText: 'Enter Your Password',
                   border: OutlineInputBorder()),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ForgotPassword()));
+                    },
+                    child: const Text(
+                      'Forgot your Password?',
+                      style: TextStyle(color: Colors.red),
+                    )),
+              ],
+            ),
             const SizedBox(
               height: 15,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColor.backgroundColor),
-                onPressed: () {},
-                child: const Text('Sign Up')),
+            CustomElevated(
+              text: 'Sign Up',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const VerificationPage()));
+              },
+            ),
             const Text('or'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +89,11 @@ class _SignInState extends State<SignIn> {
                       ))
                   .toList(),
             ),
-            
+            RichText(
+                text: const TextSpan(children: [
+              TextSpan(text: 'Dont Have an account? '),
+              TextSpan(text: ' Sign Up')
+            ])),
           ],
         ),
       ),

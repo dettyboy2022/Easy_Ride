@@ -1,5 +1,6 @@
 import 'package:easy_ride/screens/authentication/signup.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,6 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
         child: Column(
@@ -45,22 +45,14 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Column(
               children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        minimumSize: const Size(double.infinity, 50),
-                        backgroundColor: AppColor.backgroundColor),
+                CustomElevated(
+                    text: 'Create an account',
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const SignUp()));
-                    },
-                    child: const Text(
-                      'Create an account',
-                      style: TextStyle(color: AppColor.textColor1),
-                    )),
+                    }),
                 const SizedBox(
                   height: 20,
                 ),

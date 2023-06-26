@@ -1,6 +1,7 @@
 import 'package:easy_ride/screens/authentication/otp.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -14,7 +15,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         child: Padding(
@@ -95,17 +95,12 @@ class _SignUpState extends State<SignUp> {
               const SizedBox(
                 height: 15,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      minimumSize: const Size(double.infinity, 50),
-                      backgroundColor: AppColor.backgroundColor),
+              CustomElevated(
+                  text: 'Sign Up',
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => const OTP()));
-                  },
-                  child: const Text('Sign Up')),
+                  }),
               const SizedBox(
                 height: 15,
               ),

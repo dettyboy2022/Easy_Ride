@@ -1,6 +1,6 @@
 import 'package:easy_ride/screens/authentication/password.dart';
-import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:flutter/material.dart';
 
 class OTP extends StatefulWidget {
@@ -16,7 +16,7 @@ class _OTPState extends State<OTP> {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
+        padding: const EdgeInsets.all(15),
         child: Center(
           child: Column(
             children: [
@@ -29,19 +29,16 @@ class _OTPState extends State<OTP> {
                 style: TextStyle(fontSize: 16),
               ),
               const Text('Didnt receive code? Resend again'),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      minimumSize: const Size(double.infinity, 50),
-                      backgroundColor: AppColor.backgroundColor),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PasswordScreen()));
-                  },
-                  child: const Text('Verify'))
+              const Spacer(),
+              CustomElevated(
+                text: 'Verify',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PasswordScreen()));
+                },
+              ),
             ],
           ),
         ),

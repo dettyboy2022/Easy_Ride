@@ -1,5 +1,7 @@
+import 'package:easy_ride/screens/bottomnav/bottomnav.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
@@ -31,14 +33,14 @@ class _VerificationPageState extends State<VerificationPage> {
                   border: OutlineInputBorder()),
             ),
             const Spacer(),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColor.backgroundColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(double.infinity, 50)),
-                onPressed: () {},
-                child: const Text('Send OTP'))
+            CustomElevated(
+                text: 'Send OTP',
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BottomNav()));
+                }),
           ],
         ),
       ),

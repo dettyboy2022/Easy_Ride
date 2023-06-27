@@ -65,13 +65,16 @@ class _SignInState extends State<SignIn> {
               height: 15,
             ),
             CustomElevated(
-              text: 'Sign Up',
+              text: 'Sign In',
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const VerificationPage()));
               },
+            ),
+            const SizedBox(
+              height: 15,
             ),
             const Text('or'),
             Row(

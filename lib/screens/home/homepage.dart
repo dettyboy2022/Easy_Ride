@@ -1,4 +1,5 @@
 import 'package:easy_ride/drawer.dart';
+import 'package:easy_ride/screens/notification/notification.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -28,8 +29,9 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.cover)),
         child: Padding(
           padding:
-              const EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 20),
+              const EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 50),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,55 +69,66 @@ class _HomePageState extends State<HomePage> {
                           color: AppColor.backgroundColor,
                         ),
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const NotificationPage()));
+                            },
                             icon: const Icon(Iconsax.notification)),
                       )
                     ],
                   )
                 ],
               ),
-              const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Image.network(
+                  'https://res.cloudinary.com/dxje0rp9f/image/upload/v1687895593/easy_ride/Place_Indicate_jqxgwl.png'),
+              Column(
                 children: [
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          backgroundColor: AppColor.backgroundColor,
-                          minimumSize: const Size(150, 50)),
-                      onPressed: () {},
-                      child: const Text('Rental')),
-                  const Icon(Icons.navigation_rounded)
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                height: 200,
-                decoration: BoxDecoration(
-                    color: Colors.grey[600],
-                    border: Border.all(color: AppColor.backgroundColor)),
-                child: const Column(
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(
-                          prefixIcon: Icon(
-                            Iconsax.search_favorite4,
-                            color: Colors.white,
-                          ),
-                          suffixIcon: Icon(
-                            Iconsax.lovely,
-                            color: Colors.white,
-                          ),
-                          hintText: 'Where would you go?',
-                          hintStyle: TextStyle(color: AppColor.textColor1),
-                          enabledBorder: OutlineInputBorder()),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              backgroundColor: AppColor.backgroundColor,
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {},
+                          child: const Text('Rental')),
+                      const Icon(Icons.navigation_rounded)
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    height: 200,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[600],
+                        border: Border.all(color: AppColor.backgroundColor)),
+                    child: const Column(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Iconsax.search_favorite4,
+                                color: Colors.white,
+                              ),
+                              suffixIcon: Icon(
+                                Iconsax.lovely,
+                                color: Colors.white,
+                              ),
+                              hintText: 'Where would you go?',
+                              hintStyle: TextStyle(color: AppColor.textColor1),
+                              enabledBorder: OutlineInputBorder()),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  )
+                ],
               )
             ],
           ),

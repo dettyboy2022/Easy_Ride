@@ -14,9 +14,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(70), bottomRight: Radius.circular(70))),
       backgroundColor: const Color(0xff414141),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

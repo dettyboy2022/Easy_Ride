@@ -1,4 +1,5 @@
 import 'package:easy_ride/screens/splashscreen.dart';
+import 'package:easy_ride/screens/transportation/selecttransport.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
+      home: SelectTransport(),
     );
   }
 }

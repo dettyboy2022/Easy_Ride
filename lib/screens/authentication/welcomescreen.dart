@@ -1,3 +1,4 @@
+import 'package:easy_ride/screens/authentication/signin.dart';
 import 'package:easy_ride/screens/authentication/signup.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
@@ -64,7 +65,12 @@ class _WelcomePageState extends State<WelcomePage> {
                                 color: AppColor.backgroundColor),
                             borderRadius: BorderRadius.circular(10)),
                         minimumSize: const Size(double.infinity, 50)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignIn()));
+                    },
                     child: const Text('Log in',
                         style: TextStyle(color: AppColor.textColor2))),
               ],

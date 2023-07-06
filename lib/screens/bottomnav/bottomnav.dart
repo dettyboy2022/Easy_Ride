@@ -32,7 +32,6 @@ class _BottomNavState extends State<BottomNav> {
       body: pages[currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        // shape: OvalBorder(),
         child: const Icon(Iconsax.wallet_1),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -45,9 +44,6 @@ class _BottomNavState extends State<BottomNav> {
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           fixedColor: AppColor.backgroundColor,
-          // backgroundColor: Colors.black,
-          // showUnselectedLabels: true,
-          // unselectedLabelStyle: const TextStyle(color: Colors.red),
           items: const [
             BottomNavigationBarItem(icon: Icon(Iconsax.house), label: 'Home'),
             BottomNavigationBarItem(

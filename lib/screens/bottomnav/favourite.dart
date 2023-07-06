@@ -5,6 +5,13 @@ class Favourite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+        child: Text(
+          'Favourite',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+      ),
+    );
   }
 }

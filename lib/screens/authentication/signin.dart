@@ -2,6 +2,7 @@ import 'package:easy_ride/screens/authentication/forgotpassword.dart';
 import 'package:easy_ride/screens/authentication/verification.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
+import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -22,12 +23,7 @@ class _SignInState extends State<SignIn> {
           children: [
             const Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ],
+              children: [CustomText(text: 'Sign In')],
             ),
             const SizedBox(
               height: 15,

@@ -105,8 +105,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: const EdgeInsets.all(10),
-                    height: 200,
+                    height: 180,
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[600],
                         border: Border.all(color: AppColor.backgroundColor)),
                     child: const Column(
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                         TextField(
                           decoration: InputDecoration(
                               prefixIcon: Icon(
-                                Iconsax.search_favorite4,
+                                Iconsax.search_favorite_14,
                                 color: Colors.white,
                               ),
                               suffixIcon: Icon(

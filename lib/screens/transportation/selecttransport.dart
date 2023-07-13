@@ -1,3 +1,5 @@
+import 'package:easy_ride/screens/transportation/availablec_cars.dart';
+import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +16,15 @@ class _SelectTransportState extends State<SelectTransport> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: Center(
-        child: Column(
-          children: [
-            const CustomText(text: 'Select your transport'),
-            GridView.builder(
+      body: Column(
+        children: [
+          const CustomText(text: 'Select your transport'),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: GridView.builder(
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisSpacing: 20,
@@ -26,18 +32,37 @@ class _SelectTransportState extends State<SelectTransport> {
                     crossAxisCount: 2),
                 itemCount: transport.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    color: Colors.red,
-                    child: Column(
-                      children: [
-                        Image.network(transport[index]['image']),
-                        Text(transport[index]['text'])
-                      ],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AvailableCars()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: const Color(0xff5a5a5a),
+                          border: Border.all(color: AppColor.backgroundColor)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.network(transport[index]['image']),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            transport[index]['text'],
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18),
+                          )
+                        ],
+                      ),
                     ),
                   );
-                })
-          ],
-        ),
+                }),
+          )
+        ],
       ),
     );
   }

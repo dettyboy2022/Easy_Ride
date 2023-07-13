@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const SplashScreen(),
-      home: SelectTransport(),
+      home: const SelectTransport(),
     );
   }
 }

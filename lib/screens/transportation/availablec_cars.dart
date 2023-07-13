@@ -38,14 +38,8 @@ class _AvailableCarsState extends State<AvailableCars> {
                   shrinkWrap: true,
                   itemCount: carsList.length,
                   itemBuilder: (context, index) {
-                    final selectedCar = carsList[index];
                     return GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CarDetails(carInfo: selectedCar);
-                        }));
-                      },
+                      onTap: () {},
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
@@ -86,7 +80,13 @@ class _AvailableCarsState extends State<AvailableCars> {
                                         borderRadius: BorderRadius.circular(5)),
                                     minimumSize:
                                         const Size(double.infinity, 50)),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const CarDetails()));
+                                },
                                 child: const Text(
                                   'View Car',
                                   style: TextStyle(

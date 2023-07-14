@@ -38,62 +38,60 @@ class _AvailableCarsState extends State<AvailableCars> {
                   shrinkWrap: true,
                   itemCount: carsList.length,
                   itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.grey,
-                        ),
-                        margin: const EdgeInsets.only(bottom: 15),
-                        padding: const EdgeInsets.all(10),
-                        width: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              carsList[index].car,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w400),
+                    final selectedCar = carsList[index];
+                    return Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.grey,
+                      ),
+                      margin: const EdgeInsets.only(bottom: 15),
+                      padding: const EdgeInsets.all(10),
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            carsList[index].car,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: const Text('Automatic | 3 seats | Octane'),
+                            subtitle: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Iconsax.location),
+                                Text('  800m (5 mins away)')
+                              ],
                             ),
-                            ListTile(
-                              contentPadding: EdgeInsets.zero,
-                              title: const Text('Automatic | 3 seats | Octane'),
-                              subtitle: const Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(Iconsax.location),
-                                  Text('  800m (5 mins away)')
-                                ],
-                              ),
-                              trailing: Image.network(carsList[index].image),
-                            ),
-                            ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.grey,
-                                    shape: RoundedRectangleBorder(
-                                        side: const BorderSide(
-                                            width: 2,
-                                            color: AppColor.backgroundColor),
-                                        borderRadius: BorderRadius.circular(5)),
-                                    minimumSize:
-                                        const Size(double.infinity, 50)),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const CarDetails()));
-                                },
-                                child: const Text(
-                                  'View Car',
-                                  style: TextStyle(
-                                      color: AppColor.textColor2, fontSize: 17),
-                                ))
-                          ],
-                        ),
+                            trailing: Image.network(carsList[index].image),
+                          ),
+                          ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey,
+                                  shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          width: 2,
+                                          color: AppColor.backgroundColor),
+                                      borderRadius: BorderRadius.circular(5)),
+                                  minimumSize: const Size(double.infinity, 50)),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CarDetails(
+                                              carInfo: selectedCar,
+                                            )));
+                              },
+                              child: const Text(
+                                'View Car',
+                                style: TextStyle(
+                                    color: AppColor.textColor2, fontSize: 17),
+                              ))
+                        ],
                       ),
                     );
                   })

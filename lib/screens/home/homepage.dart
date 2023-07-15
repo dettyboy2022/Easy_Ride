@@ -123,7 +123,8 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.white,
                               ),
                               hintText: 'Where would you go?',
-                              hintStyle: TextStyle(color: AppColor.textColor1),
+                              hintStyle:
+                                  TextStyle(color: AppColor.textColor1),
                               enabledBorder: OutlineInputBorder()),
                         ),
                       ],

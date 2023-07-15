@@ -23,12 +23,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Iconsax.backward),
             const SizedBox(
               height: 10,
             ),
             const CircleAvatar(
               radius: 30,
+              child: Icon(Icons.person),
             ),
             const SizedBox(
               height: 30,

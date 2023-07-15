@@ -73,7 +73,7 @@ class _CarDetailsState extends State<CarDetails> {
                         padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: Colors.grey,
+                          color: Colors.grey.shade600,
                         ),
                         child: Column(
                           children: [
@@ -110,7 +110,7 @@ class _CarDetailsState extends State<CarDetails> {
                     child: ListTile(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
-                      tileColor: Colors.grey,
+                      tileColor: Colors.grey.shade600,
                       title: const Text('Model'),
                       trailing: const Text('GT5000'),
                     ),

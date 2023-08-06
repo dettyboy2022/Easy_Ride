@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.cover)),
         child: Padding(
           padding:
-              const EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 50),
+              const EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -97,7 +97,10 @@ class _HomePageState extends State<HomePage> {
                               minimumSize: const Size(150, 50)),
                           onPressed: () {},
                           child: const Text('Rental')),
-                      const Icon(Icons.navigation_rounded)
+                      Container(
+                          padding: const EdgeInsets.all(7),
+                          color: Colors.grey,
+                          child: const Icon(Icons.navigation_rounded))
                     ],
                   ),
                   const SizedBox(
@@ -105,15 +108,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: const EdgeInsets.all(10),
-                    height: 180,
+                    height: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[600],
                         border: Border.all(color: AppColor.backgroundColor)),
-                    child: const Column(
+                    child: Column(
                       children: [
                         TextField(
-                          decoration: InputDecoration(
+                          keyboardAppearance: Brightness.light,
+                          onTap: () {
+                            showBottom();
+                          },
+                          decoration: const InputDecoration(
                               prefixIcon: Icon(
                                 Iconsax.search_favorite_14,
                                 color: Colors.white,
@@ -123,10 +130,34 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.white,
                               ),
                               hintText: 'Where would you go?',
-                              hintStyle:
-                                  TextStyle(color: AppColor.textColor1),
+                              hintStyle: TextStyle(color: AppColor.textColor1),
                               enabledBorder: OutlineInputBorder()),
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    minimumSize: const Size(170, 50)),
+                                onPressed: () {},
+                                child: const Text('Delivery')),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    minimumSize: const Size(170, 50)),
+                                onPressed: () {},
+                                child: const Text('Transport'))
+                          ],
+                        )
                       ],
                     ),
                   )
@@ -137,5 +168,64 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  showBottom() async {
+    await showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: const EdgeInsets.all(15),
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.grey,
+            child: Column(
+              children: [
+                Container(
+                  color: Colors.grey.shade900,
+                  height: 5,
+                  width: 100,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Select address',
+                  style: TextStyle(fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Iconsax.search_favorite_14,
+                        color: Colors.white,
+                      ),
+                      hintText: 'From',
+                      hintStyle: TextStyle(color: AppColor.textColor1),
+                      enabledBorder: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.location_city,
+                        color: Colors.white,
+                      ),
+                      hintText: 'To',
+                      hintStyle: TextStyle(color: AppColor.textColor1),
+                      enabledBorder: OutlineInputBorder()),
+                ),
+              ],
+            ),
+          );
+        });
   }
 }

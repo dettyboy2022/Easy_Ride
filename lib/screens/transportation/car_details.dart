@@ -36,11 +36,13 @@ class _CarDetailsState extends State<CarDetails> {
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Icon(Icons.navigate_before),
                 SizedBox(
                   height: 250,
-                  width: 100,
+                  width: 300,
                   child: PageView(
                     scrollDirection: Axis.horizontal,
                     children: [

@@ -4,10 +4,7 @@ import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:easy_ride/firebase_options.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -17,23 +14,6 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  late final TextEditingController _email;
-  late final TextEditingController _password;
-
-  @override
-  void initState() {
-    _email = TextEditingController();
-    _password = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,13 +30,12 @@ class _SignInState extends State<SignIn> {
               const SizedBox(
                 height: 15,
               ),
-              TextField(
-                style: const TextStyle(color: AppColor.textColor1),
-                controller: _email,
+              const TextField(
+                style: TextStyle(color: AppColor.textColor1),
                 autocorrect: false,
                 enableSuggestions: false,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     label: Text('Email or Phone Number'),
                     labelStyle: TextStyle(color: AppColor.textColor1),
                     border: OutlineInputBorder()),
@@ -64,13 +43,12 @@ class _SignInState extends State<SignIn> {
               const SizedBox(
                 height: 15,
               ),
-              TextField(
-                style: const TextStyle(color: AppColor.textColor1),
+              const TextField(
+                style: TextStyle(color: AppColor.textColor1),
                 obscureText: true,
                 autocorrect: false,
                 enableSuggestions: false,
-                controller: _password,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     label: Text('Enter Your Password'),
                     labelStyle: TextStyle(color: AppColor.textColor1),
                     border: OutlineInputBorder()),
@@ -97,18 +75,10 @@ class _SignInState extends State<SignIn> {
               CustomElevated(
                 text: 'Sign In',
                 onPressed: () async {
-                  await Firebase.initializeApp(
-                      options: DefaultFirebaseOptions.currentPlatform);
-                  final email = _email.text;
-                  final password = _password.text;
-                  final UserCredential = await FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                          email: email, password: password);
-                  print(UserCredential);
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => const VerificationPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const VerificationPage()));
                 },
               ),
               const SizedBox(

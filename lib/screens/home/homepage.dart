@@ -116,11 +116,12 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         TextField(
-                          keyboardAppearance: Brightness.light,
+                          focusNode: FocusScopeNode(),
                           onTap: () {
                             showBottom();
                           },
                           decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
                               prefixIcon: Icon(
                                 Iconsax.search_favorite_14,
                                 color: Colors.white,
@@ -175,54 +176,77 @@ class _HomePageState extends State<HomePage> {
         context: context,
         builder: (context) {
           return Container(
-            padding: const EdgeInsets.all(15),
             width: double.infinity,
             height: double.infinity,
             color: Colors.grey,
             child: Column(
               children: [
+                const SizedBox(
+                  height: 5,
+                ),
                 Container(
                   color: Colors.grey.shade900,
                   height: 5,
                   width: 100,
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 const Text(
                   'Select address',
                   style: TextStyle(fontSize: 20),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
-                const Divider(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const TextField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Iconsax.search_favorite_14,
-                        color: Colors.white,
-                      ),
-                      hintText: 'From',
-                      hintStyle: TextStyle(color: AppColor.textColor1),
-                      enabledBorder: OutlineInputBorder()),
+                const Divider(
+                  color: Colors.white,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.location_city,
-                        color: Colors.white,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(
+                              Iconsax.search_favorite_14,
+                              color: Colors.white,
+                            ),
+                            hintText: 'From',
+                            hintStyle: TextStyle(color: AppColor.textColor1),
+                            enabledBorder: OutlineInputBorder()),
                       ),
-                      hintText: 'To',
-                      hintStyle: TextStyle(color: AppColor.textColor1),
-                      enabledBorder: OutlineInputBorder()),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(
+                              Icons.location_city,
+                              color: Colors.white,
+                            ),
+                            hintText: 'To',
+                            hintStyle: TextStyle(color: AppColor.textColor1),
+                            enabledBorder: OutlineInputBorder()),
+                      ),
+                    ],
+                  ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(
+                  color: Colors.white,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text('Recent places')
               ],
             ),
           );

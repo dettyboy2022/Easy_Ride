@@ -16,7 +16,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return Drawer(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(70), bottomRight: Radius.circular(70))),
+              topRight: Radius.circular(40), bottomRight: Radius.circular(40))),
       backgroundColor: const Color(0xff414141),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),

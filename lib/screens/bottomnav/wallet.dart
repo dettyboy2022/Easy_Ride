@@ -11,62 +11,87 @@ class Wallet extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         drawer: const CustomDrawer(),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                OutlinedButton(onPressed: () {}, child: const Text('Add Money'))
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Container(
-                  color: Colors.red,
-                  padding: const EdgeInsets.all(20),
-                  child: const Column(
-                    children: [Text('\$500'), Text('Available Balance')],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5))),
+                      onPressed: () {},
+                      child: const Text('Add Money'))
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    color: Colors.red,
+                    padding: const EdgeInsets.all(30),
+                    child: const Column(
+                      children: [
+                        Text('\$500'),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text('Available Balance')
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  color: Colors.red,
-                  padding: const EdgeInsets.all(20),
-                  child: const Column(
-                    children: [Text('\$200'), Text('Total Expend')],
+                  Container(
+                    color: Colors.red,
+                    padding: const EdgeInsets.all(30),
+                    child: const Column(
+                      children: [
+                        Text('\$200'),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text('Total Expend')
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Transactions',
+                    style: TextStyle(color: AppColor.textColor1),
                   ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Transactions',
-                  style: TextStyle(color: AppColor.textColor1),
-                ),
-                Text(
-                  'See All',
-                  style: TextStyle(color: AppColor.textColor2),
-                )
-              ],
-            ),
-            ListView.builder(
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const ListTile(
-                    leading: Icon(Iconsax.transaction_minus),
-                    title: Text('Welton'),
-                    subtitle: Text('Today at 09:20am'),
-                    trailing: Text('\$-570.00'),
-                  );
-                })
-          ],
+                  Text(
+                    'See All',
+                    style: TextStyle(color: AppColor.textColor2),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              ListView.builder(
+                  primary: false,
+                  shrinkWrap: true,
+                  itemCount: 15,
+                  itemBuilder: (context, index) {
+                    return const ListTile(
+                      tileColor: Colors.white,
+                      leading: Icon(Icons.navigation_sharp),
+                      title: Text('Welton'),
+                      subtitle: Text('Today at 09:20am'),
+                      trailing: Text('\$- 570.00'),
+                    );
+                  })
+            ],
+          ),
         ),
       ),
     );

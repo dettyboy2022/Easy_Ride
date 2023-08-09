@@ -75,7 +75,7 @@ class _AvailableCarsState extends State<AvailableCars> {
                                   shape: RoundedRectangleBorder(
                                       side: const BorderSide(
                                           width: 2,
-                                          color: AppColor.backgroundColor),
+                                          color: AppColor.textColor2),
                                       borderRadius: BorderRadius.circular(5)),
                                   minimumSize: const Size(double.infinity, 50)),
                               onPressed: () {

@@ -1,4 +1,3 @@
-import 'package:easy_ride/drawer.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -10,87 +9,147 @@ class Wallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: const CustomDrawer(),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
-                      onPressed: () {},
-                      child: const Text('Add Money'))
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    color: Colors.red,
-                    padding: const EdgeInsets.all(30),
-                    child: const Column(
-                      children: [
-                        Text('\$500'),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Text('Available Balance')
-                      ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.menu,
+                      color: AppColor.textColor2,
                     ),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    padding: const EdgeInsets.all(30),
-                    child: const Column(
+                    Row(
                       children: [
-                        Text('\$200'),
-                        SizedBox(
-                          height: 15,
+                        Icon(
+                          Icons.search,
+                          color: AppColor.textColor2,
                         ),
-                        Text('Total Expend')
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Icon(
+                          Iconsax.notification,
+                          color: AppColor.textColor2,
+                        )
                       ],
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5))),
+                        onPressed: () {},
+                        child: const Text('Add Money'))
+                  ],
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColor.backgroundColor,
+                      ),
+                      height: 150,
+                      width: 180,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '\$500',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                            'Available Balance',
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
                     ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Transactions',
-                    style: TextStyle(color: AppColor.textColor1),
-                  ),
-                  Text(
-                    'See All',
-                    style: TextStyle(color: AppColor.textColor2),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              ListView.builder(
-                  primary: false,
-                  shrinkWrap: true,
-                  itemCount: 15,
-                  itemBuilder: (context, index) {
-                    return const ListTile(
-                      tileColor: Colors.white,
-                      leading: Icon(Icons.navigation_sharp),
-                      title: Text('Welton'),
-                      subtitle: Text('Today at 09:20am'),
-                      trailing: Text('\$- 570.00'),
-                    );
-                  })
-            ],
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColor.backgroundColor,
+                      ),
+                      height: 150,
+                      width: 180,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '\$200',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                            'Total Expend',
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Transactions',
+                      style: TextStyle(color: AppColor.textColor1),
+                    ),
+                    Text(
+                      'See All',
+                      style: TextStyle(color: AppColor.textColor2),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                ListView.builder(
+                    primary: false,
+                    shrinkWrap: true,
+                    itemCount: 15,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: ListTile(
+                          tileColor: Colors.white,
+                          leading: Icon(Icons.navigation_sharp),
+                          title: Text('Welton'),
+                          subtitle: Text('Today at 09:20am'),
+                          trailing: Text(
+                            '\$ - 570.00',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ),
+                      );
+                    })
+              ],
+            ),
           ),
         ),
       ),

@@ -15,7 +15,7 @@ class CustomElevated extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           minimumSize: const Size(double.infinity, 50),
-          backgroundColor: AppColor.backgroundColor),
+          backgroundColor: AppColor.textColor2),
       onPressed: onPressed,
       child: Text(text),
     );

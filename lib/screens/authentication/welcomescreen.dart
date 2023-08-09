@@ -62,7 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         backgroundColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
                             side: const BorderSide(
-                                color: AppColor.backgroundColor),
+                                color: AppColor.textColor2),
                             borderRadius: BorderRadius.circular(10)),
                         minimumSize: const Size(double.infinity, 50)),
                     onPressed: () {

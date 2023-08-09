@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: AppColor.backgroundColor,
+                      color: AppColor.textColor2,
                     ),
                     child: IconButton(
                         onPressed: () {
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: AppColor.backgroundColor,
+                          color: AppColor.textColor2,
                         ),
                         child: IconButton(
                             onPressed: () {},
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: AppColor.backgroundColor,
+                          color: AppColor.textColor2,
                         ),
                         child: IconButton(
                             onPressed: () {
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              backgroundColor: AppColor.backgroundColor,
+                              backgroundColor: AppColor.textColor2,
                               minimumSize: const Size(150, 50)),
                           onPressed: () {},
                           child: const Text('Rental')),
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[600],
-                        border: Border.all(color: AppColor.backgroundColor)),
+                        border: Border.all(color: AppColor.textColor2)),
                     child: Column(
                       children: [
                         TextField(

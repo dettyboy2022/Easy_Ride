@@ -128,7 +128,7 @@ class _CarDetailsState extends State<CarDetails> {
                     style: OutlinedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         side: const BorderSide(
-                            width: 2, color: AppColor.backgroundColor),
+                            width: 2, color: AppColor.textColor2),
                         minimumSize: const Size(150, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5))),
@@ -139,7 +139,7 @@ class _CarDetailsState extends State<CarDetails> {
                 ),
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: AppColor.backgroundColor,
+                        backgroundColor: AppColor.textColor2,
                         minimumSize: const Size(150, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5))),

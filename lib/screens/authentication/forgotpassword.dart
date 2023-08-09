@@ -41,7 +41,7 @@ class ForgotPassword extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.backgroundColor),
+                  border: Border.all(color: AppColor.textColor2),
                   color: const Color(0xff1F212A),
                 ),
                 child: const ListTile(

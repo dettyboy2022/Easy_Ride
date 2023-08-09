@@ -38,7 +38,7 @@ class _BottomNavState extends State<BottomNav> {
           },
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
-          fixedColor: AppColor.backgroundColor,
+          fixedColor: AppColor.textColor2,
           items: const [
             BottomNavigationBarItem(icon: Icon(Iconsax.house), label: 'Home'),
             BottomNavigationBarItem(

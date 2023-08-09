@@ -93,7 +93,7 @@ class _CreateProfileState extends State<CreateProfile> {
                           minimumSize: const Size(150, 50),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          backgroundColor: AppColor.backgroundColor),
+                          backgroundColor: AppColor.textColor2),
                       onPressed: () {
                         Navigator.push(
                             context,

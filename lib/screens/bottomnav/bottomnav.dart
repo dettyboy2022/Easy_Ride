@@ -6,7 +6,7 @@ import '../home/homepage.dart';
 import 'favourite.dart';
 import 'offer.dart';
 import 'profile.dart';
-import 'wallet.dart';
+import 'wallet/wallet.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

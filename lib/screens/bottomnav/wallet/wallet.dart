@@ -1,3 +1,4 @@
+import 'package:easy_ride/screens/bottomnav/wallet/add_money.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -48,7 +49,12 @@ class Wallet extends StatelessWidget {
                         style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const AddMoney()));
+                        },
                         child: const Text('Add Money'))
                   ],
                 ),
@@ -134,14 +140,16 @@ class Wallet extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 15,
                     itemBuilder: (context, index) {
-                      return const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
                         child: ListTile(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)),
                           tileColor: Colors.white,
-                          leading: Icon(Icons.navigation_sharp),
-                          title: Text('Welton'),
-                          subtitle: Text('Today at 09:20am'),
-                          trailing: Text(
+                          leading: const Icon(Icons.navigation_sharp),
+                          title: const Text('Welton'),
+                          subtitle: const Text('Today at 09:20am'),
+                          trailing: const Text(
                             '\$ - 570.00',
                             style: TextStyle(fontSize: 14),
                           ),

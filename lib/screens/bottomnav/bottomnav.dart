@@ -31,11 +31,13 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 35, 34, 34),
           onTap: (value) {
             setState(() {
               currentIndex = value;
             });
           },
+          unselectedItemColor: AppColor.textColor1,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           fixedColor: AppColor.textColor2,

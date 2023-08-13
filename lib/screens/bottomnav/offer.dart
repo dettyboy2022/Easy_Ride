@@ -1,4 +1,5 @@
 import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,9 @@ class _OfferState extends State<Offer> {
                         'https://res.cloudinary.com/dxje0rp9f/image/upload/v1691920015/easy_ride/shopping-bag-discount-svgrepo-com_1_l8p12e.png')),
                 title: const Text(
                   'Discount 15% off',
-                  style: TextStyle(color: AppColor.textColor1),
+                  style: TextStyle(
+                    color: AppColor.textColor1,
+                  ),
                 ),
                 subtitle: const Text(
                   'Special Promo valid for Black Friday',
@@ -62,13 +65,12 @@ class _OfferState extends State<Offer> {
             decoration: const BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10))),
+                    topLeft: Radius.circular(8), topRight: Radius.circular(8))),
             width: double.infinity,
             child: Column(
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -78,7 +80,7 @@ class _OfferState extends State<Offer> {
                   width: 100,
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 const Text(
                   'Special Offer',
@@ -89,14 +91,23 @@ class _OfferState extends State<Offer> {
                 ),
                 const Divider(),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 Image.network(
                     'https://res.cloudinary.com/dxje0rp9f/image/upload/v1691921674/easy_ride/tag-discount-svgrepo-com_1_shmn24.png'),
-                const CustomText(text: 'Discount offer 15%'),
-                const Text('Special Promo valid for Black Friday'),
+                const Text(
+                  'Discount offer 15%',
+                  style: TextStyle(
+                      color: AppColor.textColor1,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700),
+                ),
+                const Text(
+                  'Special Promo valid for Black Friday',
+                  style: TextStyle(color: Colors.white),
+                ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -122,13 +133,49 @@ class _OfferState extends State<Offer> {
                   ),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 const Divider(),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
-                const Text('Terms and Conditions'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Terms and Conditions',
+                        style: TextStyle(
+                            color: AppColor.textColor1,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            width: 10,
+                            height: 10,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text('Lorem ipsum dolor sit amet,ua.')
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CustomElevated(text: 'Use Promo', onPressed: () {})
+                    ],
+                  ),
+                ),
               ],
             ),
           );

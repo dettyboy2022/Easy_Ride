@@ -62,6 +62,7 @@ class _AddMoneyState extends State<AddMoney> {
     );
   }
 
+
   List payments = [
     {
       'image':

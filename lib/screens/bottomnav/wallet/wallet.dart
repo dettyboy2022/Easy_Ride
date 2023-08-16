@@ -15,104 +15,108 @@ class Wallet extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    Icon(
-                      Icons.menu,
-                      color: AppColor.textColor2,
-                    ),
-                    Row(
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(
-                          Icons.search,
+                          Icons.menu,
                           color: AppColor.textColor2,
                         ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Icon(
-                          Iconsax.notification,
-                          color: AppColor.textColor2,
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              color: AppColor.textColor2,
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Icon(
+                              Iconsax.notification,
+                              color: AppColor.textColor2,
+                            )
+                          ],
                         )
                       ],
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const AddMoney()));
-                        },
-                        child: const Text('Add Money'))
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColor.backgroundColor,
-                      ),
-                      height: 150,
-                      width: 180,
-                      child: const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '\$500',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            'Available Balance',
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColor.backgroundColor,
-                      ),
-                      height: 150,
-                      width: 180,
-                      child: const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '\$200',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5))),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const AddMoney()));
+                            },
+                            child: const Text('Add Money'))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: AppColor.backgroundColor,
                           ),
-                          SizedBox(
-                            height: 15,
+                          height: 150,
+                          width: 180,
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '\$500',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.w500),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                'Available Balance',
+                                style: TextStyle(fontSize: 15),
+                              )
+                            ],
                           ),
-                          Text(
-                            'Total Expend',
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: AppColor.backgroundColor,
+                          ),
+                          height: 150,
+                          width: 180,
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '\$200',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.w500),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                'Total Expend',
+                                style: TextStyle(fontSize: 15),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     )
                   ],
                 ),

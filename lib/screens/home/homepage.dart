@@ -1,6 +1,8 @@
 import 'package:easy_ride/drawer.dart';
 import 'package:easy_ride/screens/notification/notification.dart';
+import 'package:easy_ride/screens/transportation/selecttransport.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
+import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -176,9 +178,13 @@ class _HomePageState extends State<HomePage> {
         context: context,
         builder: (context) {
           return Container(
+            decoration: const BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10))),
             width: double.infinity,
             height: double.infinity,
-            color: Colors.grey,
             child: Column(
               children: [
                 const SizedBox(
@@ -243,10 +249,19 @@ class _HomePageState extends State<HomePage> {
                 const Divider(
                   color: Colors.white,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text('Recent places')
+                const Spacer(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: CustomElevated(
+                      text: 'Confirm Location',
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SelectTransport()));
+                      }),
+                )
               ],
             ),
           );

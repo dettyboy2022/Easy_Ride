@@ -14,140 +14,181 @@ class CarDetails extends StatefulWidget {
 }
 
 class _CarDetailsState extends State<CarDetails> {
+  final PageController _pageController = PageController(initialPage: 0);
+  List<String> images = [
+    'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
+    'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689263580/easy_ride/image_5_q9dptd.png',
+    'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_4_c7am4j.png',
+    // Add more image URLs
+  ];
+  void _previousPage() {
+    _pageController.previousPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+  }
+
+  void _nextPage() {
+    _pageController.nextPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomText(text: widget.carInfo.car),
-            const Row(
-              children: [
-                Icon(Iconsax.star),
-                SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  '4.9 (531 reviews)',
-                  style: TextStyle(color: Colors.white),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Icon(Icons.navigate_before),
-                SizedBox(
-                  height: 250,
-                  width: 300,
-                  child: PageView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Image.network(
-                        'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
-                        fit: BoxFit.contain,
-                      ),
-                      Image.network(
-                        'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
-                        fit: BoxFit.contain,
-                      ),
-                      Image.network(
-                        'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
-                        fit: BoxFit.contain,
-                      )
-                    ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(text: widget.carInfo.car),
+              const Row(
+                children: [
+                  Icon(
+                    Iconsax.star_15,
+                    color: Colors.yellowAccent,
                   ),
-                ),
-                const Icon(Icons.navigate_next)
-              ],
-            ),
-            const Text(
-              'Specifications',
-              style: TextStyle(color: Colors.white),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: specifications
-                  .map((e) => Container(
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Colors.grey.shade600,
-                        ),
-                        child: Column(
-                          children: [
-                            const Icon(Icons.abc),
-                            Text(
-                              e['text'],
-                              style: const TextStyle(
-                                  color: AppColor.textColor1, fontSize: 16),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    '4.9 (531 reviews)',
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                        onPressed: _previousPage,
+                        icon: const Icon(
+                          Icons.navigate_before,
+                          color: AppColor.textColor1,
+                        )),
+                  ),
+                  Expanded(
+                    flex: 8,
+                    child: SizedBox(
+                      height: 250,
+                      width: 300,
+                      child: PageView.builder(
+                        controller: _pageController,
+                        itemCount: images.length,
+                        itemBuilder: (context, index) {
+                          return Center(
+                            child: Image.network(
+                              images[index],
+                              width: double.infinity,
+                              fit: BoxFit.cover,
                             ),
-                            Text(
-                              e['subtext'],
-                              style:
-                                  const TextStyle(color: AppColor.textColor1),
-                            )
-                          ],
-                        ),
-                      ))
-                  .toList(),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Car features',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            ListView.builder(
-                primary: false,
-                shrinkWrap: true,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    child: ListTile(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      tileColor: Colors.grey.shade600,
-                      title: const Text('Model'),
-                      trailing: const Text('GT5000'),
+                          );
+                        },
+                      ),
                     ),
-                  );
-                }),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        side: const BorderSide(
-                            width: 2, color: AppColor.textColor2),
-                        minimumSize: const Size(150, 50),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                        onPressed: _nextPage,
+                        icon: const Icon(
+                          Icons.navigate_next,
+                          color: AppColor.textColor1,
+                        )),
+                  ),
+                ],
+              ),
+              const Text(
+                'Specifications',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: specifications
+                    .map((e) => Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.grey.shade600,
+                          ),
+                          child: Column(
+                            children: [
+                              Icon(e[IconData]),
+                              Text(
+                                e['text'],
+                                style: const TextStyle(
+                                    color: AppColor.textColor1, fontSize: 16),
+                              ),
+                              Text(
+                                e['subtext'],
+                                style:
+                                    const TextStyle(color: AppColor.textColor1),
+                              )
+                            ],
+                          ),
+                        ))
+                    .toList(),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                'Car features',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              ListView.builder(
+                  primary: false,
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      child: ListTile(
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-                    child: const Text('Book Later')),
-                const SizedBox(
-                  width: 20,
-                ),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: AppColor.textColor2,
-                        minimumSize: const Size(150, 50),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-                    child: const Text('Ride Now'))
-              ],
-            )
-          ],
+                            borderRadius: BorderRadius.circular(5)),
+                        tileColor: Colors.grey.shade600,
+                        title: const Text('Model'),
+                        trailing: const Text('GT5000'),
+                      ),
+                    );
+                  }),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          side: const BorderSide(
+                              width: 2, color: AppColor.textColor2),
+                          minimumSize: const Size(150, 50),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5))),
+                      onPressed: () {},
+                      child: const Text('Book Later')),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          backgroundColor: AppColor.textColor2,
+                          minimumSize: const Size(150, 50),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5))),
+                      onPressed: () {},
+                      child: const Text('Ride Now'))
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -155,20 +196,8 @@ class _CarDetailsState extends State<CarDetails> {
 }
 
 List specifications = [
-  {
-    IconData: Icons.energy_savings_leaf,
-    'text': 'Max.Power',
-    'subtext': '2500hp'
-  },
-  {
-    IconData: Icons.energy_savings_leaf,
-    'text': 'Fuel',
-    'subtext': '10km per litre'
-  },
-  {
-    IconData: Icons.energy_savings_leaf,
-    'text': 'Max.Speed',
-    'subtext': '230kph'
-  },
-  {IconData: Icons.energy_savings_leaf, 'text': '0-60mph', 'subtext': '2.5sec'},
+  {IconData: Icons.battery_5_bar, 'text': 'Max.Power', 'subtext': '2500hp'},
+  {IconData: Icons.gas_meter, 'text': 'Fuel', 'subtext': '10km per litre'},
+  {IconData: Icons.speed, 'text': 'Max.Speed', 'subtext': '230kph'},
+  {IconData: Icons.engineering, 'text': '0-60mph', 'subtext': '2.5sec'},
 ];

@@ -12,7 +12,7 @@ List<AvailableCars> carsList = [
       car: 'BMW Cabrio'),
   AvailableCars(
       image:
-          'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
+          'https://res.cloudinary.com/dxje0rp9f/image/upload/v1692223085/easy_ride/image_3_1_k24x8r.png',
       car: 'Mustang Sheiby GT'),
   AvailableCars(
       image:

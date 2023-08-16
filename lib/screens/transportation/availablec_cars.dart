@@ -42,7 +42,7 @@ class _AvailableCarsState extends State<AvailableCars> {
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey,
+                        color: const Color(0xFF35383F),
                       ),
                       margin: const EdgeInsets.only(bottom: 15),
                       padding: const EdgeInsets.all(10),
@@ -71,11 +71,10 @@ class _AvailableCarsState extends State<AvailableCars> {
                           ),
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey,
+                                  backgroundColor: Colors.transparent,
                                   shape: RoundedRectangleBorder(
                                       side: const BorderSide(
-                                          width: 2,
-                                          color: AppColor.textColor2),
+                                          width: 0, color: AppColor.textColor2),
                                       borderRadius: BorderRadius.circular(5)),
                                   minimumSize: const Size(double.infinity, 50)),
                               onPressed: () {
@@ -89,7 +88,7 @@ class _AvailableCarsState extends State<AvailableCars> {
                               child: const Text(
                                 'View Car',
                                 style: TextStyle(
-                                    color: AppColor.textColor2, fontSize: 17),
+                                    color: AppColor.textColor2, fontSize: 14),
                               ))
                         ],
                       ),

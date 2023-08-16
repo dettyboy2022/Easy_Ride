@@ -87,6 +87,7 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                     border: Border.all(color: AppColor.textColor1)),
                 child: DropdownButton(
+                    dropdownColor: Colors.grey.shade700,
                     padding: const EdgeInsets.all(10),
                     underline: const SizedBox(),
                     style: const TextStyle(color: AppColor.textColor1),

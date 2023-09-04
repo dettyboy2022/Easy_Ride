@@ -20,7 +20,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const CustomDrawer(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -30,8 +29,8 @@ class _HomePageState extends State<HomePage> {
                     'https://res.cloudinary.com/dxje0rp9f/image/upload/v1687770781/easy_ride/Map_wbfwmd.png'),
                 fit: BoxFit.cover)),
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 30),
+          padding: const EdgeInsets.only(
+              left: 15, right: 15, top: 60, bottom: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -133,7 +132,8 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.white,
                               ),
                               hintText: 'Where would you go?',
-                              hintStyle: TextStyle(color: AppColor.textColor1),
+                              hintStyle:
+                                  TextStyle(color: AppColor.textColor1),
                               enabledBorder: OutlineInputBorder()),
                         ),
                         const SizedBox(
@@ -145,7 +145,8 @@ class _HomePageState extends State<HomePage> {
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
+                                        borderRadius:
+                                            BorderRadius.circular(5)),
                                     minimumSize: const Size(170, 50)),
                                 onPressed: () {},
                                 child: const Text('Delivery')),
@@ -155,7 +156,8 @@ class _HomePageState extends State<HomePage> {
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
+                                        borderRadius:
+                                            BorderRadius.circular(5)),
                                     minimumSize: const Size(170, 50)),
                                 onPressed: () {},
                                 child: const Text('Transport'))
@@ -170,6 +172,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      drawer: const CustomDrawer(),
     );
   }
 

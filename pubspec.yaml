@@ -39,6 +39,7 @@ dependencies:
   iconsax: ^0.0.8
   firebase_auth: ^4.7.0
   country_code_picker: ^3.0.0
+  google_sign_in: ^6.1.5
 
 dev_dependencies:
   flutter_test:

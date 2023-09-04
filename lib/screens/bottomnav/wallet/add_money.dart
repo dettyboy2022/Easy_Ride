@@ -21,6 +21,8 @@ class _AddMoneyState extends State<AddMoney> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TextField(
+              style: TextStyle(color: AppColor.textColor1),
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   hintText: 'Enter Amount',
                   hintStyle: TextStyle(color: AppColor.textColor1),
@@ -61,7 +63,6 @@ class _AddMoneyState extends State<AddMoney> {
       ),
     );
   }
-
 
   List payments = [
     {

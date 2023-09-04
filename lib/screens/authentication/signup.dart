@@ -146,7 +146,9 @@ class _SignUpState extends State<SignUp> {
                       final userCredential = await FirebaseAuth.instance
                           .createUserWithEmailAndPassword(
                               email: email, password: password);
-                      print(userCredential);
+                      setState(() {
+                        print(userCredential);
+                      });
                     };
                     // Navigator.push(context,
                     //     MaterialPageRoute(builder: (context) => const OTP()));

@@ -41,9 +41,9 @@ class _AvailableCarsState extends State<AvailableCars> {
                     final selectedCar = carsList[index];
                     return Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: const Color(0xFF35383F),
-                      ),
+                          borderRadius: BorderRadius.circular(5),
+                          // color: const Color(0xFF35383F),
+                          color: Colors.grey),
                       margin: const EdgeInsets.only(bottom: 15),
                       padding: const EdgeInsets.all(10),
                       width: double.infinity,

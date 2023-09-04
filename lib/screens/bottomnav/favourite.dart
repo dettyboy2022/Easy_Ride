@@ -11,7 +11,7 @@ class Favourite extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: const Color.fromARGB(255, 35, 34, 34),
+          backgroundColor: const Color(0xFF121212),
           title: const Text(
             'Favourite',
             style: TextStyle(color: AppColor.textColor1),

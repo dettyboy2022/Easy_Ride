@@ -84,7 +84,10 @@ class _SignInState extends State<SignIn> {
               const SizedBox(
                 height: 15,
               ),
-              const Text('or'),
+              const Text(
+                'or',
+                style: TextStyle(color: Colors.white),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: socials

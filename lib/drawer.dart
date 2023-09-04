@@ -16,10 +16,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return Drawer(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(40), bottomRight: Radius.circular(40))),
+              topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
       backgroundColor: const Color(0xff414141),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

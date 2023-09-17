@@ -10,12 +10,12 @@ class Wallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              children: [
-                Column(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            children: [
+              Expanded(
+                child: Column(
                   children: [
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,29 +117,31 @@ class Wallet extends StatelessWidget {
                           ),
                         )
                       ],
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Transactions',
-                      style: TextStyle(color: AppColor.textColor1),
                     ),
-                    Text(
-                      'See All',
-                      style: TextStyle(color: AppColor.textColor2),
-                    )
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Transactions',
+                          style: TextStyle(color: AppColor.textColor1),
+                        ),
+                        Text(
+                          'See All',
+                          style: TextStyle(color: AppColor.textColor2),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                ListView.builder(
+              ),
+              Expanded(
+                child: ListView.builder(
                     primary: false,
                     shrinkWrap: true,
                     itemCount: 15,
@@ -159,9 +161,9 @@ class Wallet extends StatelessWidget {
                           ),
                         ),
                       );
-                    })
-              ],
-            ),
+                    }),
+              )
+            ],
           ),
         ),
       ),

@@ -29,7 +29,6 @@ class PasswordScreen extends StatelessWidget {
               ),
               const TextField(
                 obscureText: true,
-                obscuringCharacter: '*',
                 decoration: InputDecoration(
                     hintText: 'Enter Your Password',
                     hintStyle: TextStyle(color: AppColor.textColor1),

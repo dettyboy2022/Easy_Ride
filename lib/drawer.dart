@@ -16,61 +16,57 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return Drawer(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
+              topRight: Radius.circular(10), bottomRight: Radius.circular(10))),
       backgroundColor: const Color(0xff414141),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            const CircleAvatar(
-              radius: 30,
-              child: Icon(Icons.person),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const CustomText(text: 'Charles Ayomide'),
-            const SizedBox(
-              height: 5,
-            ),
-            const Text(
-              'charlesayomide@gmail.com',
-              style: TextStyle(color: AppColor.textColor1),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 30,
+                    child: Icon(Icons.person),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  CustomText(text: 'Charles Ayomide'),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'charlesayomide@gmail.com',
+                    style: TextStyle(color: AppColor.textColor1),
+                  ),
+                ],
+              ),
             ),
             ListView.builder(
+                primary: false,
+                padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 itemCount: drawerProfile.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Row(
-                          children: [
-                            Icon(
-                              drawerProfile[index]['icon'],
-                              color: Colors.white,
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              drawerProfile[index]['text'],
-                              style:
-                                  const TextStyle(color: AppColor.textColor1),
-                            ),
-                          ],
+                      ListTile(
+                        leading: Icon(
+                          drawerProfile[index]['icon'],
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          drawerProfile[index]['text'],
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
-                      const Divider(
-                        color: Colors.white,
-                        height: 11,
-                        thickness: 1,
-                      )
+                      const Divider(),
                     ],
                   );
                 })
@@ -89,6 +85,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
     {'icon': Icons.share, 'text': 'About Us'},
     {'icon': Icons.settings, 'text': 'Settings'},
     {'icon': Icons.help_center, 'text': 'Help and Support'},
-    {'icon': Icons.logout, 'text': 'Logout'}
+    {'icon': Icons.logout, 'text': 'Logout'},
   ];
 }

@@ -30,28 +30,48 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(255, 35, 34, 34),
-          onTap: (value) {
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          unselectedItemColor: AppColor.textColor1,
-          currentIndex: currentIndex,
-          type: BottomNavigationBarType.fixed,
-          fixedColor: AppColor.textColor2,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Iconsax.house), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.favorite_chart), label: 'Favourite'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.wallet_1), label: 'Wallet'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.percentage_circle), label: 'Offer'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.profile_2user5), label: 'Profile')
-          ]),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
+        ),
+        child: SizedBox(
+          height: 80,
+          child: BottomNavigationBar(
+              elevation: 8,
+              backgroundColor: const Color.fromARGB(255, 35, 34, 34),
+              onTap: (value) {
+                setState(() {
+                  currentIndex = value;
+                });
+              },
+              unselectedItemColor: AppColor.textColor1,
+              currentIndex: currentIndex,
+              type: BottomNavigationBarType.fixed,
+              fixedColor: AppColor.textColor2,
+              items: [
+                const BottomNavigationBarItem(
+                    icon: Icon(Iconsax.house), label: 'Home'),
+                const BottomNavigationBarItem(
+                    icon: Icon(Iconsax.favorite_chart), label: 'Favourite'),
+                BottomNavigationBarItem(
+                    icon: Container(
+                      height: 40,
+                      width: 40,
+                      color: Colors.yellow,
+                      child: const Icon(
+                        Icons.wallet,
+                        color: Colors.black,
+                      ),
+                    ),
+                    label: 'Wallet'),
+                const BottomNavigationBarItem(
+                    icon: Icon(Iconsax.percentage_circle), label: 'Offer'),
+                const BottomNavigationBarItem(
+                    icon: Icon(Iconsax.profile_2user5), label: 'Profile')
+              ]),
+        ),
+      ),
     );
   }
 }

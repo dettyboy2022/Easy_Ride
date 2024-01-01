@@ -64,7 +64,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const HomeSearch()));
+                                        builder: (context) =>
+                                            const HomeSearch()));
                               },
                               icon: const Icon(Iconsax.search_favorite)),
                         ),
@@ -147,25 +148,22 @@ class _HomePageState extends State<HomePage> {
                             height: 10,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(5)),
-                                      minimumSize: const Size(170, 50)),
+                                      minimumSize: const Size(165, 50)),
                                   onPressed: () {},
                                   child: const Text('Delivery')),
-                              const SizedBox(
-                                width: 10,
-                              ),
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(5)),
-                                      minimumSize: const Size(170, 50)),
+                                      minimumSize: const Size(165, 50)),
                                   onPressed: () {},
                                   child: const Text('Transport'))
                             ],

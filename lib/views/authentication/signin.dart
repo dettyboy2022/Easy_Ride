@@ -1,5 +1,5 @@
-import 'package:easy_ride/screens/authentication/forgotpassword.dart';
-import 'package:easy_ride/screens/authentication/verification.dart';
+import 'package:easy_ride/views/authentication/forgotpassword.dart';
+import 'package:easy_ride/views/authentication/verification.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';

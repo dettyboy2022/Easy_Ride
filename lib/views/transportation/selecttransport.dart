@@ -1,4 +1,4 @@
-import 'package:easy_ride/screens/transportation/availablec_cars.dart';
+import 'package:easy_ride/views/transportation/availablec_cars.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';

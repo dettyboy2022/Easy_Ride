@@ -1,5 +1,5 @@
 import 'package:easy_ride/models/onboarding_model.dart';
-import 'package:easy_ride/screens/authentication/welcomescreen.dart';
+import 'package:easy_ride/views/authentication/welcomescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

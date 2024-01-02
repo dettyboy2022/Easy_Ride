@@ -1,4 +1,4 @@
-import 'package:easy_ride/screens/splashscreen.dart';
+import 'package:easy_ride/views/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

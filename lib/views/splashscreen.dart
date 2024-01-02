@@ -1,4 +1,4 @@
-import 'package:easy_ride/screens/onboarding.dart';
+import 'package:easy_ride/views/onboarding.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 

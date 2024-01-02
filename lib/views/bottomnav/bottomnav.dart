@@ -1,12 +1,12 @@
+import 'package:easy_ride/views/favourite/favourite.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../home/homepage.dart';
-import 'favourite.dart';
-import 'offer.dart';
-import 'profile.dart';
-import 'wallet/wallet.dart';
+import '../offer/offer.dart';
+import '../profile/profile.dart';
+import '../wallet/wallet.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

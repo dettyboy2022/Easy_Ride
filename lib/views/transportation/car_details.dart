@@ -15,7 +15,7 @@ class CarDetails extends StatefulWidget {
 
 class _CarDetailsState extends State<CarDetails> {
   final PageController _pageController = PageController(initialPage: 0);
-  List<String> images = [
+  List images = [
     'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_3_gclcit.png',
     'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689263580/easy_ride/image_5_q9dptd.png',
     'https://res.cloudinary.com/dxje0rp9f/image/upload/v1689266541/easy_ride/image_4_c7am4j.png',
@@ -142,10 +142,13 @@ class _CarDetailsState extends State<CarDetails> {
                 'Car features',
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
+              const SizedBox(
+                height: 5,
+              ),
               ListView.builder(
                   primary: false,
                   shrinkWrap: true,
-                  itemCount: 3,
+                  itemCount: features.length,
                   itemBuilder: (context, index) {
                     return Container(
                       margin: const EdgeInsets.only(bottom: 10),
@@ -153,8 +156,15 @@ class _CarDetailsState extends State<CarDetails> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)),
                         tileColor: Colors.grey.shade600,
-                        title: const Text('Model'),
-                        trailing: const Text('GT5000'),
+                        title: Text(
+                          features[index]['feat'],
+                          style: const TextStyle(color: AppColor.textColor1),
+                        ),
+                        trailing: Text(
+                          features[index]['feats'],
+                          style: const TextStyle(
+                              fontSize: 13, color: AppColor.textColor1),
+                        ),
                       ),
                     );
                   }),
@@ -200,4 +210,12 @@ List specifications = [
   {IconData: Icons.gas_meter, 'text': 'Fuel', 'subtext': '10km per litre'},
   {IconData: Icons.speed, 'text': 'Max.Speed', 'subtext': '230kph'},
   {IconData: Icons.engineering, 'text': '0-60mph', 'subtext': '2.5sec'},
+];
+
+List features = [
+  {'feat': 'Model', 'feats': 'GT5000'},
+  {'feat': 'Capacity', 'feats': '760hp'},
+  {'feat': 'Color', 'feats': 'Red'},
+  {'feat': 'Fuel type', 'feats': 'Octane'},
+  {'feat': 'Gear type', 'feats': 'Automatic'},
 ];

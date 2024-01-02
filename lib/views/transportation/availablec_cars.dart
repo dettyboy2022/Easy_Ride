@@ -1,5 +1,5 @@
 import 'package:easy_ride/models/available_cars_model.dart';
-import 'package:easy_ride/screens/transportation/car_details.dart';
+import 'package:easy_ride/views/transportation/car_details.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/appbar.dart';
 import 'package:easy_ride/widgets/constants/reusable/text.dart';

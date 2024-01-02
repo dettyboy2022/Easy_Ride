@@ -1,7 +1,7 @@
 import 'package:easy_ride/drawer.dart';
-import 'package:easy_ride/screens/home/widget/search.dart';
-import 'package:easy_ride/screens/notification/notification.dart';
-import 'package:easy_ride/screens/transportation/selecttransport.dart';
+import 'package:easy_ride/views/home/widget/search.dart';
+import 'package:easy_ride/views/home/widget/notification.dart';
+import 'package:easy_ride/views/transportation/selecttransport.dart';
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
 import 'package:flutter/material.dart';

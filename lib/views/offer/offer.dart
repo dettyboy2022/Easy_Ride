@@ -1,6 +1,5 @@
 import 'package:easy_ride/widgets/constants/app_color.dart';
 import 'package:easy_ride/widgets/constants/reusable/elevatedbutton.dart';
-import 'package:easy_ride/widgets/constants/reusable/text.dart';
 import 'package:flutter/material.dart';
 
 class Offer extends StatefulWidget {

@@ -66,6 +66,7 @@ class _OfferState extends State<Offer> {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(8), topRight: Radius.circular(8))),
             width: double.infinity,
+            // height: MediaQuery.of(context).size.height * 1,
             child: Column(
               children: [
                 const SizedBox(

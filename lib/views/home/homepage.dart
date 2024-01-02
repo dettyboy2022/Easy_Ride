@@ -1,4 +1,4 @@
-import 'package:easy_ride/drawer.dart';
+import 'package:easy_ride/widgets/drawer/drawer.dart';
 import 'package:easy_ride/views/home/widget/search.dart';
 import 'package:easy_ride/views/home/widget/notification.dart';
 import 'package:easy_ride/views/transportation/selecttransport.dart';

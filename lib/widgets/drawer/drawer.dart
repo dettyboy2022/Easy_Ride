@@ -105,12 +105,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
           MaterialPageRoute(builder: (context) => const Settings()),
         );
         break;
-      case 'HelpSupport':
+      case 'Help and Support':
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const HelpSupport()),
         );
     }
+    // Navigator.pop(context);
   }
 
   List drawerProfile = [

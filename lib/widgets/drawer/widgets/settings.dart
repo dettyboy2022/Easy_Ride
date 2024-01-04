@@ -7,17 +7,23 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xFF121212),
         title: const Text(
-          'About Us',
+          'Settings',
           style: TextStyle(color: AppColor.textColor1),
         ),
         centerTitle: true,
       ),
-      body: const Column(children: []),
+      body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const ListTile(
+              title: Text('Hello'),
+            );
+          }),
     );
   }
 }

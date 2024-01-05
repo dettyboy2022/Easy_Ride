@@ -17,6 +17,26 @@ class Address extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      body: ListView.builder(
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10)),
+              margin: const EdgeInsets.all(10),
+              child: const ListTile(
+                tileColor: Color(0xFF35383F),
+                leading: Icon(Icons.location_disabled),
+                title: Text(
+                  'Office',
+                  style: TextStyle(color: AppColor.textColor1),
+                ),
+                subtitle: Text('2972 Westheimer Rd, Santa Ana, Illinois 85486'),
+                trailing: Icon(Icons.edit),
+              ),
+            );
+          }),
     );
   }
 }

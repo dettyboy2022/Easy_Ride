@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: [  
               Image.network(
                   'https://res.cloudinary.com/dxje0rp9f/image/upload/v1703322928/easy_ride/Logo_2_yblk39.png'),
               Image.network(

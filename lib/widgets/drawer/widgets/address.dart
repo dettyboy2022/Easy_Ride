@@ -27,13 +27,22 @@ class Address extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               child: const ListTile(
                 tileColor: Color(0xFF35383F),
-                leading: Icon(Icons.location_disabled),
+                leading: Icon(
+                  Icons.location_disabled,
+                  color: AppColor.textColor1,
+                ),
                 title: Text(
                   'Office',
                   style: TextStyle(color: AppColor.textColor1),
                 ),
-                subtitle: Text('2972 Westheimer Rd, Santa Ana, Illinois 85486'),
-                trailing: Icon(Icons.edit),
+                subtitle: Text(
+                  '2972 Westheimer Rd, Santa Ana, Illinois 85486',
+                  style: TextStyle(color: AppColor.textColor1),
+                ),
+                trailing: Icon(
+                  Icons.edit,
+                  color: AppColor.textColor1,
+                ),
               ),
             );
           }),

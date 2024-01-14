@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/app_color.dart';
 
-
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
@@ -31,27 +30,6 @@ class _SettingsState extends State<Settings> {
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-          itemCount: settings.length,
-          itemBuilder: (context, index) {
-            return Container(
-              margin: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.textColor2),
-                  borderRadius: BorderRadius.circular(8)),
-              child: ListTile(
-                tileColor: const Color(0xFF35383F),
-                title: Text(
-                  settings[index],
-                  style: const TextStyle(color: AppColor.textColor1),
-                ),
-                trailing: const Icon(
-                  Icons.arrow_forward,
-                  color: AppColor.textColor1,
-                ),
-              ),
-            );
-          }),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:easy_ride/theme/theme.dart';
 import 'package:easy_ride/views/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: darkMode,
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFF121212),
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xffFEC400)),

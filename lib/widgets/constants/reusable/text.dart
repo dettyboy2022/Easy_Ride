@@ -13,13 +13,4 @@ class CustomText extends StatelessWidget {
           color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
     );
   }
-}
-
-class CustomSubText extends StatelessWidget {
-  const CustomSubText({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
+} 

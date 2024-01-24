@@ -34,38 +34,32 @@ class _HistoryState extends State<History> with TickerProviderStateMixin {
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            Card(
-              color: Colors.grey,
-              elevation: 5,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: Container(
-                decoration: BoxDecoration(
-                    // color: AppColor.textColor2,
-                    borderRadius: BorderRadius.circular(10)),
-                child: TabBar(
-                  dividerColor: Colors.transparent,
-                  labelStyle: const TextStyle(color: AppColor.textColor1),
-                  unselectedLabelColor: AppColor.textColor1,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  // indicatorColor: AppColor.textColor2,
-                  controller: tabControll,
-                  indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: AppColor.textColor2),
-                      color: AppColor.textColor2),
-                  tabs: const [
-                    Tab(
-                      text: 'Upcoming',
-                    ),
-                    Tab(
-                      text: 'Completed',
-                    ),
-                    Tab(
-                      text: 'Cancelled',
-                    ),
-                  ],
-                ),
+            Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                  color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+              child: TabBar(
+                dividerColor: Colors.transparent,
+                labelStyle: const TextStyle(color: AppColor.textColor1),
+                unselectedLabelColor: AppColor.textColor1,
+                indicatorSize: TabBarIndicatorSize.tab,
+                // indicatorColor: AppColor.textColor2,
+                controller: tabControll,
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: AppColor.textColor2),
+                    color: AppColor.textColor2),
+                tabs: const [
+                  Tab(
+                    text: 'Upcoming',
+                  ),
+                  Tab(
+                    text: 'Completed',
+                  ),
+                  Tab(
+                    text: 'Cancelled',
+                  ),
+                ],
               ),
             ),
             Expanded(
